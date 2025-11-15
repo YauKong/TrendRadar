@@ -70,3 +70,29 @@ jobs:
           git config --global user.email 'actions@github.com'
           git add -A
           git diff --quiet && git diff --staged --quiet || (git commit -m "Auto update by GitHub Actions at $(TZ=Asia/Shanghai date)" && git push)
+      
+      - name: Send To WeCom App
+        env:
+          CORP_ID: ${{ secrets.WECOM_CORP_ID }}
+          AGENT_ID: ${{ secrets.WECOM_AGENT_ID }}
+          SECRET: ${{ secrets.WECOM_SECRET }}
+          TO_USER: ${{ secrets.WECOM_TO_USER }}  # 你的企业微信账号
+        run: |
+          # 获取 access_token
+          ACCESS_TOKEN=$(curl -s "https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=$CORP_ID&corpsecret=$SECRET" | jq -r '.access_token')
+
+          echo "Access Token Fetched."
+
+          # 读取 GitHub Action 本次产生的消息文本
+          MSG=$(cat "result/trend.txt")
+
+          # 发送文本消息
+          curl -s -X POST "https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=$ACCESS_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "{
+                  \"touser\": \"${TO_USER}\",
+                  \"agentid\": ${AGENT_ID},
+                  \"msgtype\": \"text\",
+                  \"text\": {\"content\": \"${MSG}\"},
+                  \"safe\": 0
+                }"
