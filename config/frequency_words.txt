@@ -1,53 +1,27 @@
-胖东来
-于东来
+
 
 DeepSeek
 梁文锋
 
-华为
-鸿蒙
-HarmonyOS
-任正非
 
-比亚迪
-王传福
-
-大疆
-DJI
-
-宇树
-王兴兴
 
 智元
 灵犀
 稚晖君
 彭志辉
 
-黑神话
-冯骥
+Ubisoft
+育碧
 
-影之刃零
-梁其伟
+腾讯
 
-哪吒
-饺子
-杨宇
+米哈游
+技术美术
+场景美术
+Technical Artist
+
 !车
 !餐
-
-三体
-流浪地球
-刘慈欣
-郭帆
-
-申奥
-
-京东
-刘强东
-
-字节
-bytedance
-张一鸣
 
 特斯拉
 马斯克
@@ -61,6 +35,12 @@ NVIDIA
 
 AMD
 
+Duolingo
+多邻国
+
+RoyalHolloway
+Northeastern university
+
 谷歌
 google
 gemini
@@ -71,6 +51,7 @@ openai
 sora
 
 claude
+claude code
 Anthropic
 
 iphone
