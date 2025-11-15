@@ -97,7 +97,8 @@ platforms:
     name: "少数派"
   - id: "producthunt"
     name: "ProductHunt"
-
+  - id: "steam"
+    name: "Steam"
   - id: "xueqiu"
     name: "雪球"
   - id: "wallstreetcn-hot"
